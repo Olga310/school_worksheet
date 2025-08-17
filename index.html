@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)file:///C:/Users/User/Downloads/school_worksheet.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Subjects &amp; Objects - Worksheet</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .worksheet {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="30" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="70" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+        }
+        
+        .header h1 {
+            font-family: 'Comic Neue', cursive;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .student-info {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            border-bottom: 3px solid #e9ecef;
+        }
+        
+        .student-info h2 {
+            color: #495057;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .info-item label {
+            font-weight: 600;
+            color: #6c757d;
+            min-width: 60px;
+        }
+        
+        .info-line {
+            flex: 1;
+            height: 2px;
+            background: #dee2e6;
+            border-radius: 1px;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 15px;
+            font-family: 'Comic Neue', cursive;
+            font-size: 1.4em;
+            margin-bottom: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            width: 30px;
+            height: 30px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .reading-text {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #28a745;
+            line-height: 1.8;
+        }
+        
+        .reading-text p {
+            margin-bottom: 15px;
+        }
+        
+        .vocabulary-highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #856404;
+        }
+        
+        .questions {
+            background: #fff;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            padding: 25px;
+        }
+        
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #007bff;
+        }
+        
+        .question-label {
+            font-weight: 700;
+            color: #007bff;
+            margin-bottom: 8px;
+        }
+        
+        .options {
+            margin-left: 20px;
+        }
+        
+        .option {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .option input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #007bff;
+        }
+        
+        .answer-table {
+            background: #e8f4f8;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .answer-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .answer-box {
+            background: white;
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .answer-box:hover {
+            border-color: #007bff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,123,255,0.2);
+        }
+        
+        .answer-box label {
+            font-weight: 700;
+            color: #007bff;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .answer-input {
+            width: 60px;
+            height: 40px;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        
+        .vocab-exercise {
+            background: #f0f8ff;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        
+        .exercise-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+        
+        .column {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #dee2e6;
+        }
+        
+        .column h4 {
+            color: #495057;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        
+        .word-item {
+            padding: 10px 15px;
+            margin: 8px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            font-weight: 500;
+        }
+        
+        .fill-blank {
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .blank {
+            display: inline-block;
+            width: 200px;
+            height: 30px;
+            border-bottom: 2px solid #007bff;
+            margin: 0 5px;
+        }
+        
+        .true-false-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .tf-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .tf-options {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .tf-option {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .worksheet {
+                box-shadow: none;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="worksheet">
+        <div class="header">
+            <h1>📚 School Subjects &amp; Objects</h1>
+            <div class="subtitle">English Reading &amp; Vocabulary Worksheet • Level A1+</div>
+        </div>
+        
+        <div class="student-info">
+            <h2>Student Information</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <label>Name:</label>
+                    <div class="info-line"></div>
+                </div>
+                <div class="info-item">
+                    <label>Class:</label>
+                    <div class="info-line"></div>
+                </div>
+                <div class="info-item">
+                    <label>Date:</label>
+                    <div class="info-line"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <!-- Reading Section -->
+            <div class="section">
+                <div class="section-title">📖 Reading Text</div>
+                <div class="reading-text">
+                    <h3 style="text-align: center; margin-bottom: 20px; color: #28a745;">My School Day</h3>
+                    
+                    <p>Hi! My name is Emma, and I want to tell you about my school day. I study many interesting subjects that help me learn about the world.</p>
+                    
+                    <p>In the morning, I have <span class="vocabulary-highlight">Maths</span>. I use my calculator and notebook to solve problems with numbers. Maths started in ancient Egypt over 4,000 years ago! After Maths, I have <span class="vocabulary-highlight">History</span>. My teacher shows us old photos and tells stories about people from long ago. We learn about kings, wars, and how people lived before us.</p>
+                    
+                    <p>My favorite lesson is <span class="vocabulary-highlight">Geography</span>. I love looking at the <span class="vocabulary-highlight">map</span> on the wall and finding different countries. We also have a big <span class="vocabulary-highlight">globe</span> on the teacher's desk. It shows our planet Earth! The teacher says Geography helps us understand our world better.</p>
+                    
+                    <p>On Tuesdays, we have <span class="vocabulary-highlight">PE</span> (Physical Education). I always wear my white <span class="vocabulary-highlight">trainers</span> and sports clothes. We play football, run, and do exercises. PE keeps our bodies healthy and strong.</p>
+                    
+                    <p><span class="vocabulary-highlight">Art</span> class is very creative. We use <span class="vocabulary-highlight">scissors</span> to cut paper and make beautiful pictures. Some students paint, and others draw. Art helps us show our ideas and feelings.</p>
+                    
+                    <p>In <span class="vocabulary-highlight">Science</span> class, we learn about animals, plants, and how things work. We do fun experiments with water and plants. Sometimes we use the <span class="vocabulary-highlight">laptop</span> to watch videos about space and dinosaurs.</p>
+                    
+                    <p><span class="vocabulary-highlight">Music</span> lessons are loud but fun! We sing songs and play instruments. Music exists in every country around the world.</p>
+                    
+                    <p>When I don't understand a word, I use my English <span class="vocabulary-highlight">dictionary</span>. It helps me find meanings of new words.</p>
+                    
+                    <p>School subjects and objects help me learn new things every day. What is your favorite subject?</p>
+                </div>
+            </div>
+            
+            <!-- Reading Comprehension -->
+            <div class="section">
+                <div class="section-title">🤔 Reading Comprehension</div>
+                <div class="questions">
+                    <p style="font-weight: 600; margin-bottom: 20px; color: #495057;">Прочитайте текст. Для каждого предложения A–E выберите один правильный вариант ответа из трёх предложенных (1, 2 или 3).</p>
+                    
+                    <div class="question">
+                        <div class="question-label">A. According to the text, Maths started:</div>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q1" id="q1a" value="1">
+                                <label for="q1a">1. in ancient Greece</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q1" id="q1b" value="2">
+                                <label for="q1b">2. in ancient Egypt over 4,000 years ago</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q1" id="q1c" value="3">
+                                <label for="q1c">3. in modern times</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <div class="question-label">B. What does Emma use in PE class?</div>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q2" id="q2a" value="1">
+                                <label for="q2a">1. scissors and paper</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q2" id="q2b" value="2">
+                                <label for="q2b">2. a laptop and dictionary</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q2" id="q2c" value="3">
+                                <label for="q2c">3. white trainers and sports clothes</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <div class="question-label">C. In Geography lessons, students can see:</div>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q3" id="q3a" value="1">
+                                <label for="q3a">1. a map on the wall and a globe on the teacher's desk</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q3" id="q3b" value="2">
+                                <label for="q3b">2. only books about countries</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q3" id="q3c" value="3">
+                                <label for="q3c">3. videos about space</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <div class="question-label">D. The word "creative" in the text means:</div>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q4" id="q4a" value="1">
+                                <label for="q4a">1. difficult and boring</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q4" id="q4b" value="2">
+                                <label for="q4b">2. using imagination to make something new</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q4" id="q4c" value="3">
+                                <label for="q4c">3. very expensive</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <div class="question-label">E. Emma uses her English dictionary when:</div>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q5" id="q5a" value="1">
+                                <label for="q5a">1. she wants to play games</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q5" id="q5b" value="2">
+                                <label for="q5b">2. she doesn't understand a word</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q5" id="q5c" value="3">
+                                <label for="q5c">3. she needs to do Maths homework</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="answer-table">
+                    <h4 style="text-align: center; margin-bottom: 15px; color: #007bff;">Answer Table</h4>
+                    <div class="answer-grid">
+                        <div class="answer-box">
+                            <label>A</label>
+                            <input type="text" class="answer-input" maxlength="1">
+                        </div>
+                        <div class="answer-box">
+                            <label>B</label>
+                            <input type="text" class="answer-input" maxlength="1">
+                        </div>
+                        <div class="answer-box">
+                            <label>C</label>
+                            <input type="text" class="answer-input" maxlength="1">
+                        </div>
+                        <div class="answer-box">
+                            <label>D</label>
+                            <input type="text" class="answer-input" maxlength="1">
+                        </div>
+                        <div class="answer-box">
+                            <label>E</label>
+                            <input type="text" class="answer-input" maxlength="1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vocabulary Exercises -->
+            <div class="section">
+                <div class="section-title">💡 Vocabulary Exercises</div>
+                
+                <!-- Exercise 1 -->
+                <div class="vocab-exercise">
+                    <h3 style="color: #495057; margin-bottom: 20px;">Exercise 1: Match the collocations</h3>
+                    <p style="margin-bottom: 20px; color: #6c757d;">Найдите подходящие словосочетания из текста. Соедините слова из левой колонки со словами из правой колонки.</p>
+                    
+                    <div class="exercise-grid">
+                        <div class="column">
+                            <h4>Column A</h4>
+                            <div class="word-item">1. solve ____</div>
+                            <div class="word-item">2. old ____</div>
+                            <div class="word-item">3. sports ____</div>
+                            <div class="word-item">4. fun ____</div>
+                            <div class="word-item">5. new ____</div>
+                            <div class="word-item">6. beautiful ____</div>
+                            <div class="word-item">7. favorite ____</div>
+                            <div class="word-item">8. ancient ____</div>
+                        </div>
+                        <div class="column">
+                            <h4>Column B</h4>
+                            <div class="word-item">a) Egypt</div>
+                            <div class="word-item">b) subject</div>
+                            <div class="word-item">c) experiments</div>
+                            <div class="word-item">d) problems</div>
+                            <div class="word-item">e) photos</div>
+                            <div class="word-item">f) things</div>
+                            <div class="word-item">g) clothes</div>
+                            <div class="word-item">h) pictures</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exercise 2 -->
+                <div class="vocab-exercise">
+                    <h3 style="color: #495057; margin-bottom: 20px;">Exercise 2: Complete the sentences</h3>
+                    <p style="margin-bottom: 20px; color: #6c757d;">Выберите правильное словосочетание и впишите его в предложение.</p>
+                    <p style="margin-bottom: 20px; font-weight: 600; background: #fff3cd; padding: 10px; border-radius: 8px; color: #856404;">
+                        Word bank: keep healthy, find meanings, show ideas, learn about, do exercises
+                    </p>
+                    
+                    <div class="fill-blank">1. In PE class, we run and <span class="blank"></span> to stay fit.</div>
+                    <div class="fill-blank">2. Art helps us <span class="blank"></span> and feelings through drawing.</div>
+                    <div class="fill-blank">3. I use my dictionary to <span class="blank"></span> of new words.</div>
+                    <div class="fill-blank">4. In History, we <span class="blank"></span> people from long ago.</div>
+                    <div class="fill-blank">5. Sports and good food help <span class="blank"></span> our bodies.</div>
+                </div>
+                
+                <!-- Exercise 3 -->
+                <div class="vocab-exercise">
+                    <h3 style="color: #495057; margin-bottom: 20px;">Exercise 3: True collocations or not?</h3>
+                    <p style="margin-bottom: 20px; color: #6c757d;">Отметьте ✓, если словосочетание правильное, и ✗, если неправильное.</p>
+                    
+                    <div class="true-false-grid">
+                        <div class="tf-item">
+                            <span>1. solve problems</span>
+                            <div class="tf-options">
+                                <div class="tf-option">
+                                    <input type="radio" name="tf1" id="tf1a">
+                                    <label for="tf1a">✓</label>
+                                </div>
+                                <div class="tf-option">
+                                    <input type="radio" name="tf1" id="tf1b">
+                                    <label for="tf1b">✗</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tf-item">
+                            <span>2. beautiful scissors</span>
+                            <div class="tf-options">
+                                <div class="tf-option">
+                                    <input type="radio" name="tf2" id="tf2a">
+                                    <label for="tf2a">✓</label>
+                                </div>
+                                <div class="tf-option">
+                                    <input type="radio" name="tf2" id="tf2b">
+                                    <label for="tf2b">✗</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tf-item">
+                            <span>3. white trainers</span>
+                            <div class="tf-options">
+                                <div class="tf-option">
+                                    <input type="radio" name="tf3" id="tf3a">
+                                    <label for="tf3a">✓</label>
+                                </div>
+                                <div class="tf-option">
+                                    <input type="radio" name="tf3" id="tf3b">
+                                    <label for="tf3b">✗</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tf-item">
+                            <span>4. loud music</span>
+                            <div class="tf-options">
+                                <div class="tf-option">
+                                    <input type="radio" name="tf4" id="tf4a">
+                                    <label for="tf4a">✓</label>
+                                </div>
+                                <div class="tf-option">
+                                    <input type="radio" name="tf4" id="tf4b">
+                                    <label for="tf4b">✗</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tf-item">
+                            <span>5. creative laptop</span>
+                            <div class="tf-options">
+                                <div class="tf-option">
+                                    <input type="radio" name="tf5" id="tf5a">
+                                    <label for="tf5a">✓</label>
+                                </div>
+                                <div class="tf-option">
+                                    <input type="radio" name="tf5" id="tf5b">
+                                    <label for="tf5b">✗</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tf-item">
+                            <span>6. ancient Egypt</span>
+                            <div class="tf-options">
+                                <div class="tf-option">
+                                    <input type="radio" name="tf6" id="tf6a">
+                                    <label for="tf6a">✓</label>
+                                </div>
+                                <div class="tf-option">
+                                    <input type="radio" name="tf6" id="tf6b">
+                                    <label for="tf6b">✗</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tf-item">
+                            <span>7. fun experiments</span>
+                            <div class="tf-options">
+                                <div class="tf-option">
+                                    <input type="radio" name="tf7" id="tf7a">
+                                    <label for="tf7a">✓</label>
+                                </div>
+                                <div class="tf-option">
+                                    <input type="radio" name="tf7" id="tf7b">
+                                    <label for="tf7b">✗</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tf-item">
+                            <span>8. strong dictionary</span>
+                            <div class="tf-options">
+                                <div class="tf-option">
+                                    <input type="radio" name="tf8" id="tf8a">
+                                    <label for="tf8a">✓</label>
+                                </div>
+                                <div class="tf-option">
+                                    <input type="radio" name="tf8" id="tf8b">
+                                    <label for="tf8b">✗</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>📚 School Subjects &amp; Objects Worksheet • English A1+ Level • Teacher's Resource</p>
+        </div>
+    </div>
+    
+    <script>
+        // Print functionality
+        function printWorksheet() {
+            window.print();
+        }
+        
+        // Add keyboard shortcut for print
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'p') {
+                e.preventDefault();
+                printWorksheet();
+            }
+        });
+    </script>
+
+</body></html>
